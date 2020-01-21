@@ -1,4 +1,3 @@
-#Author: Alexander Christopher
 #Email: abc5885@psu.edu
 
 #Input how many people will be sharing the pizza and how many pizzas will be order
@@ -15,16 +14,18 @@ pizzaSlices = 8
 
 
 #Algorithm to determine how many will distrubted to people eating
+#Determines how many slices will be purchased when certian amount of pizza is ordered
+#Also determines how many slices are left if anyone ops for only 2 slices
 sliceCount = pizza * pizzaSlices
 recountPeople = people - limitSlices
 limitSliceCount = sliceCount - limitSlices * 2
-
+#Determines how the groups will split up for distrubtion of pizza slices
 secondGroup = limitSliceCount % recountPeople
 firstGroup = recountPeople - secondGroup
-
+#Determine how many slices each person gets and how many remaining slices are left
 slicesPerPerson = limitSliceCount // recountPeople
 slicesRemaining = limitSliceCount % recountPeople
-
+#Determines how the remaining slices are distrubted to group two 
 extraSlices = slicesPerPerson + slicesRemaining//secondGroup
 
 
@@ -34,8 +35,4 @@ print(limitSlices, "person(s) will have 2 slices.")
 
 print(firstGroup,"will receive",slicesPerPerson,"slice(s),",
       secondGroup,"will recieve",extraSlices,"slice(s).")
-
-
-
-
 
